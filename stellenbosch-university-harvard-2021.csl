@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
-    <title>University of Cape Town - Harvard</title>
+    <title>University of Stellenbosch - Harvard 2021</title>
     <title-short>SU-Harvard</title-short>
     <id>http://www.zotero.org/styles/stellenbosch-university-harvard-2021</id>
     <link href="http://www.zotero.org/styles/stellenbosch-university-harvard-2021" rel="self"/>
@@ -10,9 +10,6 @@
     <!-- Sample data: https://gist.github.com/aurimasv/14da71a5d1def6e6ed86 -->
     <author>
       <name>Kirchner van Deventer</name>
-      <name>University of Cape Town</name>
-      <name>Aurimas Vinckevicius</name>
-      <email>aurimas.dev@gmail.com</email>
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
