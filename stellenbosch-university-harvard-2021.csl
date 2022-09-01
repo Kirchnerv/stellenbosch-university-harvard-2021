@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
+<style class="in-text" version="1.0" et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" demote-non-dropping-particle="sort-only" default-locale="en-GB" xmlns="http://purl.org/net/xbiblio/csl">
   <info>
-    <title>University of Stellenbosch - Harvard 2021</title>
+    <title>Stellenbosch University - Harvard - Lisa E - Kirchner van Deventer</title>
     <title-short>SU-Harvard</title-short>
-    <id>http://www.zotero.org/styles/stellenbosch-university-harvard-2021</id>
-    <link href="http://www.zotero.org/styles/stellenbosch-university-harvard-2021" rel="self"/>
+    <id>https://csl.mendeley.com/styles/559292421/harvard-stellenbosch-university-kvd-le</id>
+    <link href="http://www.zotero.org/styles/harvard-stellenbosch-university" rel="self"/>
     <link href="http://www.zotero.org/styles/harvard-university-of-cape-town" rel="template"/>
-    <link href="https://libguides.sun.ac.za/c.php?g=742962&p=5316902" rel="documentation"/>
-    <!-- Sample data: https://gist.github.com/aurimasv/14da71a5d1def6e6ed86 -->
+    <link href="https://libguides.sun.ac.za/c.php?g=742962&amp;p=5316902" rel="documentation"/>
     <author>
       <name>Kirchner van Deventer</name>
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <updated>2018-06-16T04:05:31+00:00</updated>
+    <updated>2022-09-01T13:06:07+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xmlns="http://purl.org/net/xbiblio/csl" xml:lang="en-GB">
@@ -29,9 +28,9 @@
   <macro name="editor-translator">
     <choose>
       <if variable="editor">
-        <names variable="editor">
+        <names variable="editor" font-style="normal">
           <name and="symbol" initialize-with="." delimiter=", "/>
-          <label form="short" prefix=", " text-case="capitalize-first"/>
+          <label form="short" text-case="lowercase" font-style="normal" prefix=", (" suffix=")"/>
         </names>
       </if>
     </choose>
@@ -64,13 +63,12 @@
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" and="symbol" delimiter=", " initialize-with="." delimiter-precedes-last="never" et-al-min="4" et-al-use-first="1"/>
+      <name form="short" and="symbol" delimiter-precedes-last="never" et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" initialize-with="."/>
       <substitute>
         <names variable="editor"/>
         <names variable="translator"/>
         <choose>
           <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-            <!-- Note that webpage title is italicized in bibliography, but quoted in text -->
             <text variable="title" form="short" font-style="italic"/>
           </if>
           <else>
@@ -86,10 +84,6 @@
     </names>
   </macro>
   <macro name="date-issued">
-    <!--
-      Show "in press" for journal articles with non-numeric pages
-      (i.e. "in press" in page field)
-    -->
     <choose>
       <if type="article-journal" match="none">
         <text macro="date-issued-year"/>
@@ -106,9 +100,6 @@
     </choose>
   </macro>
   <macro name="date-issued-no-parentheses">
-    <!--
-      Same as date-issued, but no parentheses around "in press"
-    -->
     <choose>
       <if type="article-journal" match="none">
         <text macro="date-issued-year"/>
@@ -202,9 +193,9 @@
       <text variable="publisher"/>
     </group>
   </macro>
-  <citation disambiguate-add-year-suffix="true" year-suffix-delimiter="," disambiguate-add-names="true" disambiguate-add-givenname="false" collapse="year-suffix">
+  <citation et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-names="true" disambiguate-add-year-suffix="true" collapse="year-suffix" year-suffix-delimiter=",">
     <sort>
-      <key macro="date-issued-no-parentheses"/>
+      <key macro="date-issued-no-parentheses" sort="descending"/>
       <key macro="author"/>
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
@@ -284,10 +275,11 @@
           <else-if type="chapter paper-conference entry-encyclopedia entry-dictionary" match="any">
             <text macro="title"/>
             <group delimiter=" ">
-              <text term="in" text-case="capitalize-first"/>
-              <text variable="container-title" font-style="italic"/>
+              <text term="in" text-case="lowercase"/>
+              <text macro="editor-translator" font-style="italic"/>
             </group>
-            <text macro="book-details"/>
+            <text variable="container-title" font-style="italic"/>
+            <text macro="publisher"/>
             <text variable="page"/>
           </else-if>
           <else-if type="patent" match="any">
