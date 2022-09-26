@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style class="in-text" version="1.0" et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" demote-non-dropping-particle="sort-only" default-locale="en-GB" xmlns="http://purl.org/net/xbiblio/csl">
   <info>
-    <title>Stellenbosch University - Harvard</title>
+    <title>Stellenbosch University - Harvard - Annemie</title>
     <title-short>SU-Harvard</title-short>
-    <id>https://csl.mendeley.com/styles/559292421/harvard-stellenbosch-university-kvd-le</id>
+    <id>https://csl.mendeley.com/styles/559292421/harvard-stellenbosch-university-Annemie</id>
     <link href="http://www.zotero.org/styles/harvard-stellenbosch-university" rel="self"/>
     <link href="http://www.zotero.org/styles/harvard-university-of-cape-town" rel="template"/>
     <link href="https://libguides.sun.ac.za/c.php?g=742962&amp;p=5316902" rel="documentation"/>
@@ -12,7 +12,7 @@
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <updated>2022-09-01T13:06:07+00:00</updated>
+    <updated>2022-09-26T06:38:49+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xmlns="http://purl.org/net/xbiblio/csl" xml:lang="en-GB">
@@ -28,9 +28,9 @@
   <macro name="editor-translator">
     <choose>
       <if variable="editor">
-        <names variable="editor" font-style="normal">
+        <names variable="editor">
           <name and="symbol" initialize-with="." delimiter=", "/>
-          <label form="short" text-case="lowercase" font-style="normal" prefix=", (" suffix=")"/>
+          <label form="short" text-case="lowercase" prefix=", (" suffix=")."/>
         </names>
       </if>
     </choose>
@@ -176,7 +176,6 @@
         <label variable="volume" form="short" text-case="capitalize-first"/>
         <text variable="volume"/>
       </group>
-      <text macro="editor-translator"/>
       <group delimiter=" " prefix="(" suffix=")">
         <text variable="collection-title"/>
         <group delimiter=" ">
@@ -193,9 +192,9 @@
       <text variable="publisher"/>
     </group>
   </macro>
-  <citation et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-names="true" disambiguate-add-year-suffix="true" collapse="year-suffix" year-suffix-delimiter=",">
+  <citation disambiguate-add-year-suffix="true" year-suffix-delimiter="," disambiguate-add-names="true" disambiguate-add-givenname="false" collapse="year-suffix">
     <sort>
-      <key macro="date-issued-no-parentheses" sort="descending"/>
+      <key macro="date-issued-year" sort="descending"/>
       <key macro="author"/>
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
@@ -276,10 +275,10 @@
             <text macro="title"/>
             <group delimiter=" ">
               <text term="in" text-case="lowercase"/>
-              <text macro="editor-translator" font-style="italic"/>
+              <text macro="editor-translator"/>
+              <text variable="container-title" font-style="italic"/>
             </group>
-            <text variable="container-title" font-style="italic"/>
-            <text macro="publisher"/>
+            <text macro="book-details"/>
             <text variable="page"/>
           </else-if>
           <else-if type="patent" match="any">
