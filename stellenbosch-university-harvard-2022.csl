@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style class="in-text" version="1.0" et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" demote-non-dropping-particle="sort-only" default-locale="en-GB" xmlns="http://purl.org/net/xbiblio/csl">
+<style class="in-text" version="1.0" et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" demote-non-dropping-particle="Never" default-locale="en-GB" xmlns="http://purl.org/net/xbiblio/csl">
   <info>
     <title>Stellenbosch University - Harvard - Annemie</title>
     <title-short>SU-Harvard</title-short>
